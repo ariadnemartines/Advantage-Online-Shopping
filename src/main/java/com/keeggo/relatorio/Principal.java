@@ -10,7 +10,7 @@ public class Principal {
 		dir.mkdirs();
 		
 		Document doc = CriaPDF.CriaPDFs(dir, "teste.pdf");
-		
+		doc.open();
 		CriaPDF.addCabecalhoPDF(doc, "");
 		
 		doc.close();
