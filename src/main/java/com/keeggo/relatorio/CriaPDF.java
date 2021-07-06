@@ -3,6 +3,7 @@ package com.keeggo.relatorio;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import com.itextpdf.text.BaseColor;
@@ -13,6 +14,7 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.Font.FontFamily;
+import com.itextpdf.text.Image;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
@@ -26,7 +28,7 @@ public class CriaPDF {
 		return doc;
 	}
 
-	public static void addCabecalhoPDF(Document doc, String nomeCT) throws DocumentException, InterruptedException {
+	public static void addCabecalhoPDF(Document doc, String nomeCT, Date data) throws DocumentException, InterruptedException {
 		String usuarioLogado;
 		usuarioLogado = System.getProperty("user.name");
 
@@ -52,9 +54,8 @@ public class CriaPDF {
 		PdfPCell txtExecutor = new PdfPCell(new Paragraph(usuarioLogado));
 		PdfPCell lblData = new PdfPCell(new Paragraph("Data"));
 
-		Date date = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-		PdfPCell txtData = new PdfPCell(new Paragraph(formatter.format(date)));
+		PdfPCell txtData = new PdfPCell(new Paragraph(formatter.format(data)));
 
 		lblSistema.setBorderColor(BaseColor.BLACK);
 		lblSistema.setHorizontalAlignment(Element.ALIGN_TOP);
@@ -86,5 +87,14 @@ public class CriaPDF {
 		tableheader.setSpacingAfter(20);
 
 		doc.add(tableheader);
+	}
+
+	public static void insereImagens(Document doc, ArrayList<byte[]> evidences) throws Exception{
+		for (byte[] evidence : evidences) {
+			Image image = Image.getInstance(evidence);
+			image.scaleAbsolute(200, 500);
+			image.setAlignment(Image.ALIGN_CENTER);
+			doc.add(image);
+		}
 	}
 }

@@ -1,6 +1,9 @@
 package com.keeggo.utils;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import com.itextpdf.text.Document;
 import com.keeggo.relatorio.CriaPDF;
 
@@ -17,11 +20,16 @@ public class Annotation {
 
 	@After
 	public void after(Scenario scenario) throws Exception {
-		File dir = new File(System.getProperty("user.dir") + "\\Evidencias");
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat formatter2 = new SimpleDateFormat("HH-mm-ss");
+		
+		File dir = new File(System.getProperty("user.dir") + "\\Evidencias\\" + formatter.format(date));
 		dir.mkdirs();
-		Document doc = CriaPDF.CriaPDFs(dir, scenario.getName() + ".pdf");
+		Document doc = CriaPDF.CriaPDFs(dir, scenario.getName() + " " + formatter2.format(date) + ".pdf");
 		doc.open();
-		CriaPDF.addCabecalhoPDF(doc, scenario.getName());
+		CriaPDF.addCabecalhoPDF(doc, scenario.getName(), date);
+		CriaPDF.insereImagens(doc, Utils.getEvidences());		
 		doc.close();
 		DriverMobile.close();
 	}

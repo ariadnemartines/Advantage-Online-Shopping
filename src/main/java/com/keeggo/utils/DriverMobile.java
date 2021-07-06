@@ -42,7 +42,7 @@ public class DriverMobile {
 
 	public static void close() {
 		if(driver != null) {
-			driver.close();
+			driver.quit();
 			driver = null;
 		}
 	}

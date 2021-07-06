@@ -1,7 +1,9 @@
 package com.keeggo.utils;
 
+import java.util.ArrayList;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,8 +13,11 @@ public class Utils {
 
 	public WebDriver webDriver;
 
+	public static ArrayList<byte[]> evidences;
+	
 	public Utils(WebDriver driver) {
 		webDriver = driver;
+		
 	}
 
 	public WebDriver getWebDriver() {
@@ -40,5 +45,16 @@ public class Utils {
 		return getWebDriver().findElement(element);
 	}
 	
+	public void takeScreenShot() {
+		if(evidences == null) {
+			evidences = new ArrayList<byte[]>();
+		}
+		byte[] scrFile = ((TakesScreenshot)getWebDriver()).getScreenshotAs(OutputType.BYTES);
+		evidences.add(scrFile);
+	}
+	
+	public static ArrayList<byte[]> getEvidences(){
+		return evidences;
+	}
 	
 }

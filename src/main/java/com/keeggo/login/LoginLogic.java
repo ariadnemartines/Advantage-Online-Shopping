@@ -25,17 +25,20 @@ public class LoginLogic {
 		log.info("Preencho o campo usuario");
 		utils.waitElement(loginPage.getTxtUsuario(), 60);
 		utils.insertText(loginPage.getTxtUsuario(), usuario);
+		utils.takeScreenShot();
 	}
 
 	public void preencherSenha(String senha) {
 		log.info("Preencho o campo senha");
 		utils.waitElement(loginPage.getTxtSenha(), 60);
-		utils.insertText(loginPage.getTxtSenha(), senha);		
+		utils.insertText(loginPage.getTxtSenha(), senha);	
+		utils.takeScreenShot();
 	}
 
 	public void clicarBtnLogin() {
 		log.info("Clico no botao Login");
 		utils.waitElement(loginPage.getBtnLogin(), 60);
+		utils.takeScreenShot();
 		utils.click(loginPage.getBtnLogin());
 	}
 
@@ -43,5 +46,6 @@ public class LoginLogic {
 		log.info("Clico no botao Login");
 		utils.waitElement(cadastroUsuarioPage.getTxtUsuarioLogado(), 60);
 		assertEquals(usuario, utils.getText(cadastroUsuarioPage.getTxtUsuarioLogado()));
+		utils.takeScreenShot();
 	}
 }
