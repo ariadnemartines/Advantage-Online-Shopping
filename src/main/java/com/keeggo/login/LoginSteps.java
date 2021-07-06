@@ -1,6 +1,8 @@
 package com.keeggo.login;
 
-import io.cucumber.java.en.And;
+import cucumber.api.PendingException;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 
 public class LoginSteps {
 	
@@ -9,19 +11,27 @@ public class LoginSteps {
 	public LoginSteps() {
 		loginLogic = new LoginLogic();
 	}
-
-	@And("preencho o campo usuario {string} em Login")
-	public void preencho_o_campo_usuario_em_login(String usuario) {
+	
+	@When("^preencho o campo usuario \"([^\"]*)\" em Login$")
+	public void preencho_o_campo_usuario_em_Login(String usuario) throws Throwable {
 		loginLogic.preencherUsuario(usuario);
 	}
 
-	@And("preencho o campo senha {string} em Login")
-	public void preencho_o_campo_senha_em_login(String senha) {
-	    loginLogic.preencherSenha(senha);
+	@When("^preencho o campo senha \"([^\"]*)\" em Login$")
+	public void preencho_o_campo_senha_em_Login(String senha) throws Throwable {
+		loginLogic.preencherSenha(senha);
 	}
-	
-	@And("clico no botao 'Login'")
-	public void clico_no_botao_login() {
+
+	@When("^clico no botao 'Login'$")
+	public void clico_no_botao_Login() throws Throwable {
 		loginLogic.clicarBtnLogin();
 	}
+
+	@Then("^valido o usuario logado \"([^\"]*)\"$")
+	public void valido_o_usuario_logado(String usuario) throws Throwable {
+		loginLogic.validarUsuarioLogado(usuario);
+	}
+
+
+
 }

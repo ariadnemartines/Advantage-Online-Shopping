@@ -1,6 +1,6 @@
 @tag
 Feature: Cadastro de usuario
-  I want to use this template for my feature file
+  Eu quero realizar cadastro de usuario
 
   @tag1
   Scenario Outline: Cadastro de usuario
@@ -13,7 +13,7 @@ Feature: Cadastro de usuario
     And preencho o campo senha "<senha>" novamente
     And clico no botao 'Registrar'
     And abro o menu pricipal
-    Then valido o usuario cadastrado
+    Then valido o usuario cadastrado "<nomeDeUsuario>"
    
 
     Examples: 

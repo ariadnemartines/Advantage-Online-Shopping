@@ -2,14 +2,17 @@ package com.keeggo.utils;
 
 import java.net.URL;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.appium.java_client.android.AndroidDriver;
 
 public class DriverMobile {
 
+	private static WebDriver driver;
+	
 	@SuppressWarnings("rawtypes")
-	public static AndroidDriver getWebDriverObject() throws Exception {
+	public static void configAndroidDriverObject() throws Exception {
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		String server = "127.0.0.1";
 		String port = "4723";
@@ -26,11 +29,21 @@ public class DriverMobile {
 
 			String url = String.format("http://%s:%s/wd/hub", server, port);
 
-			return new AndroidDriver(new URL(url), capabilities);
+			driver = new AndroidDriver(new URL(url), capabilities);
 
 		} catch (Exception e) {
 			throw new Exception("Falha ao iniciar o Driver");
 		}
 	}
+	
+	public static WebDriver getDriver() {
+		return driver;
+	}
 
+	public static void close() {
+		if(driver != null) {
+			driver.close();
+			driver = null;
+		}
+	}
 }

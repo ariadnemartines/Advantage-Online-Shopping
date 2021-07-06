@@ -18,8 +18,4 @@ public class CadastroUsuarioPage {
 	private By btnRegistrar = By.xpath("//*[contains(@text, 'REGISTER')]");
 	private By txtUsuarioLogado = By.xpath("//*[@resource-id='com.Advantage.aShopping:id/textViewMenuUser']");
 	
-	
-	//*[contains(@text, 'LOGIN')]
-
-	
 }

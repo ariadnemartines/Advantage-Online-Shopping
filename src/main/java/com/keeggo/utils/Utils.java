@@ -1,6 +1,7 @@
 package com.keeggo.utils;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -9,6 +10,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Utils {
 
 	public WebDriver webDriver;
+
+	public Utils(WebDriver driver) {
+		webDriver = driver;
+	}
 
 	public WebDriver getWebDriver() {
 		return webDriver;
@@ -31,9 +36,9 @@ public class Utils {
 		return getWebDriver().findElement(element).getText();
 	}
 
-	public WebElement findElement( By element )	{
+	public WebElement findElement(By element) {
 		return getWebDriver().findElement(element);
 	}
-
-
+	
+	
 }

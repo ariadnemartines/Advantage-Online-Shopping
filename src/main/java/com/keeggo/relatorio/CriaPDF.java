@@ -19,7 +19,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class CriaPDF {
 
-	public static Document CriaPDFs(File dir2, String fileName) throws Throwable {
+	public static Document CriaPDFs(File dir2, String fileName) throws Exception {
 		Document doc = new Document(PageSize.A4);
 		FileOutputStream os = new FileOutputStream(dir2 + File.separator + fileName);
 		PdfWriter.getInstance(doc, os);
@@ -27,8 +27,6 @@ public class CriaPDF {
 	}
 
 	public static void addCabecalhoPDF(Document doc, String nomeCT) throws DocumentException, InterruptedException {
-		Font bold = new Font(Font.FontFamily.TIMES_ROMAN, 12, Font.BOLD);
-
 		String usuarioLogado;
 		usuarioLogado = System.getProperty("user.name");
 
@@ -48,10 +46,8 @@ public class CriaPDF {
 
 		PdfPCell lblSistema = new PdfPCell(new Paragraph("Sistema"));
 		PdfPCell txtSistema = new PdfPCell(new Paragraph("Advantage Online Shopping"));
-		// PdfPCell lblVersao = new PdfPCell(new Paragraph("Versão"));
-		// PdfPCell txtVersao = new PdfPCell(new Paragraph("V1"));
 		PdfPCell lblCT = new PdfPCell(new Paragraph("CT"));
-		PdfPCell txtCT = new PdfPCell(new Paragraph("Exemplo caso de teste"));
+		PdfPCell txtCT = new PdfPCell(new Paragraph(nomeCT));
 		PdfPCell lblExecutor = new PdfPCell(new Paragraph("Executor"));
 		PdfPCell txtExecutor = new PdfPCell(new Paragraph(usuarioLogado));
 		PdfPCell lblData = new PdfPCell(new Paragraph("Data"));
