@@ -10,7 +10,7 @@ Para configuração do JUnit ir no projeto com o botão direito > Build Path > A
 
 Para cada caso de teste exite uma runner para execução, Ex: LoginRunner e CadastroUsuarioRunner.
 
-As evidências são geradas na pasta Evidencias, com subpasta de data, com o nome do caso de teste, seguido pelo horário de execução.
+As evidências são geradas na pasta Evidencias, com subpasta de data, com o nome do caso de teste, seguido pelo horário de execução, em formato .pdf, contendo um cabeçalho com informações como: nome do sistema, nome do CT, executor, data e horário. 
 
 Foi implementado o apache log4j para registros de log.
 
