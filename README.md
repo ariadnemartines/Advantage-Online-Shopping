@@ -2,7 +2,7 @@
 
 Automação Mobile que realiza Login e Cadastro de usuários no aplicativo Advantage Online Shopping.
 
-A escrita dos cenário está no padrão BDD, e encontram-se na pasta features.
+A escrita dos cenários está no padrão BDD, e encontram-se na pasta features.
 
 É necessário estar configurado no projeto o plugin JUnit para execução dos casos de testes.
 
