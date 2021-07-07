@@ -1,11 +1,11 @@
-package com.keeggo.cadastrousuario;
+package com.keeggo.casodeteste.cadastrousuario;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.apache.log4j.LogManager;
 
-import com.keeggo.utils.DriverMobile;
-import com.keeggo.utils.Utils;
+import com.keeggo.core.DriverMobile;
+import com.keeggo.core.Utils;
 
 public class CadastroUsuarioLogic {
 	
@@ -77,8 +77,9 @@ public class CadastroUsuarioLogic {
 
 	public void clicarBtnRegistrar() {
 		log.info("clico no botao Registrar");
-		//inserir swipe
+		utils.swipeDown();
 		utils.takeScreenShot();
+		utils.waitElement(cadastroUsuarioPage.getBtnRegistrar(), 60);
 		utils.click(cadastroUsuarioPage.getBtnRegistrar());
 	}
 

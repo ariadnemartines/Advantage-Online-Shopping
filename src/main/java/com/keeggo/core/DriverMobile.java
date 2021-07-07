@@ -1,4 +1,4 @@
-package com.keeggo.utils; 
+package com.keeggo.core; 
 
 import java.net.URL;
 

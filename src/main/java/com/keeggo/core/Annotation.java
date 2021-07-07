@@ -1,11 +1,11 @@
-package com.keeggo.utils;
+package com.keeggo.core;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.itextpdf.text.Document;
-import com.keeggo.relatorio.CriaPDF;
+import com.keeggo.core.relatorio.CriaPDF;
 
 import cucumber.api.Scenario;
 import cucumber.api.java.After;

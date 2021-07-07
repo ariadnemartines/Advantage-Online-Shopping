@@ -1,4 +1,4 @@
-package com.keeggo.relatorio;
+package com.keeggo.core.relatorio;
 
 import java.io.File;
 import java.io.FileOutputStream;

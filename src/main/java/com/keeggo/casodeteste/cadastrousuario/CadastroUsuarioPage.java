@@ -1,4 +1,4 @@
-package com.keeggo.cadastrousuario;
+package com.keeggo.casodeteste.cadastrousuario;
 
 import org.openqa.selenium.By;
 

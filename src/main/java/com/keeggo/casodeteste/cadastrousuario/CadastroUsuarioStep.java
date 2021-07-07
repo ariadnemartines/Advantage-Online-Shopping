@@ -1,4 +1,4 @@
-package com.keeggo.cadastrousuario;
+package com.keeggo.casodeteste.cadastrousuario;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;

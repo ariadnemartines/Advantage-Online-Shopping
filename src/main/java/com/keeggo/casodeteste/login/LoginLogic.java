@@ -1,12 +1,12 @@
-package com.keeggo.login;
+package com.keeggo.casodeteste.login;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.apache.log4j.LogManager;
 
-import com.keeggo.cadastrousuario.CadastroUsuarioPage;
-import com.keeggo.utils.DriverMobile;
-import com.keeggo.utils.Utils;
+import com.keeggo.casodeteste.cadastrousuario.CadastroUsuarioPage;
+import com.keeggo.core.DriverMobile;
+import com.keeggo.core.Utils;
 
 public class LoginLogic {
 

@@ -1,4 +1,4 @@
-package com.keeggo.login;
+package com.keeggo.casodeteste.login;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Then;

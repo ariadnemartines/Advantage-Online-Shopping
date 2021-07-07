@@ -1,4 +1,4 @@
-package com.keeggo.login;
+package com.keeggo.casodeteste.login;
 
 import org.openqa.selenium.By;
 
