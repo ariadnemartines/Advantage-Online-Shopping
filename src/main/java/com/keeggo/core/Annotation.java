@@ -4,6 +4,8 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.log4j.xml.DOMConfigurator;
+
 import com.itextpdf.text.Document;
 import com.keeggo.core.relatorio.CriaPDF;
 
@@ -15,6 +17,7 @@ public class Annotation {
 
 	@Before
 	public void before(Scenario scenario) throws Exception {
+		DOMConfigurator.configure("log4j.xml");
 		DriverMobile.configAndroidDriverObject();
 	}
 

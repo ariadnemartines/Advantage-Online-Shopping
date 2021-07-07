@@ -2,16 +2,16 @@ package com.keeggo.casodeteste.cadastrousuario;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.apache.log4j.LogManager;
-
 import com.keeggo.core.DriverMobile;
 import com.keeggo.core.Utils;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 public class CadastroUsuarioLogic {
 	
 	private CadastroUsuarioPage cadastroUsuarioPage;
 	private Utils utils;
-	private static final org.apache.log4j.Logger log = LogManager.getLogger(CadastroUsuarioLogic.class);
 	
 	
 	public CadastroUsuarioLogic() {

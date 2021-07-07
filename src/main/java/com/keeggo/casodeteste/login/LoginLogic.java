@@ -2,19 +2,19 @@ package com.keeggo.casodeteste.login;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.apache.log4j.LogManager;
-
 import com.keeggo.casodeteste.cadastrousuario.CadastroUsuarioPage;
 import com.keeggo.core.DriverMobile;
 import com.keeggo.core.Utils;
 
+import lombok.extern.log4j.Log4j;
+
+@Log4j
 public class LoginLogic {
 
 	private LoginPage loginPage;
 	private CadastroUsuarioPage cadastroUsuarioPage;
 	private Utils utils;
-	private static final org.apache.log4j.Logger log = LogManager.getLogger(LoginLogic.class);
-	
+
 	public LoginLogic() {
 		loginPage = new LoginPage();
 		cadastroUsuarioPage = new CadastroUsuarioPage();
@@ -31,7 +31,7 @@ public class LoginLogic {
 	public void preencherSenha(String senha) {
 		log.info("Preencho o campo senha");
 		utils.waitElement(loginPage.getTxtSenha(), 60);
-		utils.insertText(loginPage.getTxtSenha(), senha);	
+		utils.insertText(loginPage.getTxtSenha(), senha);
 		utils.takeScreenShot();
 	}
 
@@ -43,7 +43,7 @@ public class LoginLogic {
 	}
 
 	public void validarUsuarioLogado(String usuario) {
-		log.info("Clico no botao Login");
+		log.info("Valido usuario logado");
 		utils.waitElement(cadastroUsuarioPage.getTxtUsuarioLogado(), 60);
 		assertEquals(usuario, utils.getText(cadastroUsuarioPage.getTxtUsuarioLogado()));
 		utils.takeScreenShot();
