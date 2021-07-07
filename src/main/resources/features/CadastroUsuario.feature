@@ -18,5 +18,5 @@ Feature: Cadastro de usuario
 
     Examples: 
       | nomeDeUsuario  |            email          | senha    |
-      | tedoceg750     |    tedoceg750@nnacell.com | Senha123 |
+      | tedoceg770     |    tedoceg770@nnacell.com | Senha123 |
     

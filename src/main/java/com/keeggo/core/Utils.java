@@ -22,7 +22,6 @@ public class Utils {
 
 	public Utils(WebDriver driver) {
 		webDriver = driver;
-
 	}
 
 	public WebDriver getWebDriver() {
